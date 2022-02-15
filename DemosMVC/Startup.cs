@@ -26,6 +26,9 @@ namespace DemosMVC {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<TiendaDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("TiendaConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
