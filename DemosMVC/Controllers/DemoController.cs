@@ -12,7 +12,6 @@ namespace DemosMVC.Controllers {
             // modelo 
             ViewData["saluda"] = true;
             ViewData["nombre"] = "pepito";
-            var db = new TiendaDbContext();
 
             return View();
         }

@@ -7,13 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myWebApp", "myWebApp\myWebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemosMVC", "DemosMVC\DemosMVC.csproj", "{08C0749C-258A-42DD-901C-28351DEAE5BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "capa.datos", "capa.datos\capa.datos.csproj", "{AB6F9C5D-559C-4910-AC70-C3632DC97A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.Entities", "Domains.Entity\Domains.Entities.csproj", "{2376E45B-A9BE-480E-A2B7-87E2A3323C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domains.Entities", "Domains.Entity\Domains.Entities.csproj", "{2376E45B-A9BE-480E-A2B7-87E2A3323C4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.Contracts", "Domains.Contracts\Domains.Contracts.csproj", "{B381055E-B83A-47D0-8505-D5E511A0FA7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domains.Contracts", "Domains.Contracts\Domains.Contracts.csproj", "{B381055E-B83A-47D0-8505-D5E511A0FA7F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domains.Services", "Domains.Services\Domains.Services.csproj", "{C834A032-C1D2-4492-B39E-9E4D5A4216E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.Services", "Domains.Services\Domains.Services.csproj", "{C834A032-C1D2-4492-B39E-9E4D5A4216E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{08C0749C-258A-42DD-901C-28351DEAE5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C0749C-258A-42DD-901C-28351DEAE5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C0749C-258A-42DD-901C-28351DEAE5BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB6F9C5D-559C-4910-AC70-C3632DC97A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB6F9C5D-559C-4910-AC70-C3632DC97A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB6F9C5D-559C-4910-AC70-C3632DC97A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB6F9C5D-559C-4910-AC70-C3632DC97A08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2376E45B-A9BE-480E-A2B7-87E2A3323C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2376E45B-A9BE-480E-A2B7-87E2A3323C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2376E45B-A9BE-480E-A2B7-87E2A3323C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU

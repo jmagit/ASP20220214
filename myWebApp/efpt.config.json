@@ -1,17 +1,17 @@
 ﻿{
    "CodeGenerationMode": 0,
    "ContextClassName": "TiendaDbContext",
-   "ContextNamespace": null,
+   "ContextNamespace": "myWebApp.Data",
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
-   "ModelNamespace": null,
+   "ModelNamespace": "Domains.Entities",
    "OutputContextPath": "Data",
-   "OutputPath": "Entities",
-   "ProjectRootNamespace": "Domains",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
-   "SelectedToBeGenerated": 1,
+   "SelectedToBeGenerated": 0,
    "Tables": [
       {
          "Name": "[HumanResources].[Department]",

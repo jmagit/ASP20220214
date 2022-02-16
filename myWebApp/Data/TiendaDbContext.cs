@@ -7,7 +7,7 @@ using Domains.Entities;
 
 #nullable disable
 
-namespace DemosMVC.Data
+namespace myWebApp.Data
 {
     public partial class TiendaDbContext : DbContext
     {
