@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Domains.Entities.Core;
+using Util.Core.Validators;
 
 namespace Domains.Entities
 {
@@ -143,6 +144,7 @@ namespace Domains.Entities
         /// Date the product was available for sale.
         /// </summary>
         [Column(TypeName = "datetime")]
+        [Past]
         public DateTime SellStartDate { get; set; }
         /// <summary>
         /// Date the product was no longer available for sale.
@@ -205,5 +207,11 @@ namespace Domains.Entities
         public virtual ICollection<TransactionHistory> TransactionHistories { get; set; }
         [InverseProperty(nameof(WorkOrder.Product))]
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+
+        public override IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
+            var errors = base.Validate(validationContext);
+            // ...
+            return errors;
+        }
     }
 }

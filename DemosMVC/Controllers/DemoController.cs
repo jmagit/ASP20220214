@@ -19,5 +19,22 @@ namespace DemosMVC.Controllers {
             // modelo 
             return View(new Persona() { Id = 1, Nombre = "Pepito", Apellidos = "Grillo", Activo = true, FechaDeBaja = DateTime.Now });
         }
+
+        public string cadena([FromHeader(Name ="accept-language")] string acceptLanguage) {
+            // modelo 
+                return "Hola Mundo " + acceptLanguage;
+            
+        }
+        public IActionResult json() {
+            // modelo 
+            return Json(new Persona() { Id = 1, Nombre = "Pepito", Apellidos = "Grillo", Activo = true, FechaDeBaja = DateTime.Now });
+        }
+
+        public IActionResult estado([FromQuery] int id) {
+            // modelo 
+            return this.StatusCode(id);
+        }
+
+
     }
 }

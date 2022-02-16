@@ -27,7 +27,14 @@ namespace DemosMVC.Controllers
         {
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
-            return View(srv.getAll(0, 10));
+            return View(srv.getAll());
+        }
+
+        public async Task<IActionResult> Pagina(int page, int rows = 20) {
+            
+            //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
+            //return View(await tiendaDbContext.ToListAsync());
+            return View("Index", srv.getAll(page, rows));
         }
 
         // GET: Productos/Details/5
@@ -179,5 +186,19 @@ namespace DemosMVC.Controllers
         {
             return _context.Products.Any(e => e.ProductId == id);
         }
+
+        public async Task<IActionResult> photo(int? id) {
+            if (id == null) {
+                return NotFound();
+            }
+
+            var product = await _context.ProductPhotos.FindAsync(id);
+            if (product == null) {
+                return NotFound();
+            }
+            return File(product.LargePhoto, "image/gif");
+        }
+
+
     }
 }

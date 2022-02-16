@@ -62,6 +62,16 @@ namespace DemosMVC {
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
+                //endpoints.MapControllerRoute(
+                //    name: "informes",
+                //    pattern: "admin/informe/{año}/{mes}/{tipo}",
+                //    defaults: new { controller = "gererator", action = "infor" } );
+
+                //endpoints.MapControllerRoute(
+                //    name: "paginable",
+                //    pattern: "{controller=Home}/{page}/{rows}",
+                //    defaults: new { action = "Pagina" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
