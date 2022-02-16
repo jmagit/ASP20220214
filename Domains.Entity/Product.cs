@@ -47,12 +47,14 @@ namespace Domains.Entities
         /// </summary>
         [Required]
         [StringLength(50)]
+        [Display(Name = "Nombre")]
         public string Name { get; set; }
         /// <summary>
         /// Unique product identification number.
         /// </summary>
         [Required]
         [StringLength(25)]
+        [Display(Name = "Código")]
         public string ProductNumber { get; set; }
         /// <summary>
         /// 0 = Product is purchased, 1 = Product is manufactured in-house.

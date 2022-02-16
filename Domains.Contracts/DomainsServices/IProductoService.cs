@@ -6,6 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domains.Contracts.DomainsServices {
-    public interface IProductoService: IDomainService<Product, int> {
+    public interface IProductoService: IDomainService<Product, int>, IPageableService<Product> {
     }
 }

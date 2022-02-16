@@ -1,4 +1,8 @@
 using DemosMVC.Data;
+using DemosMVC.Infraestructure;
+using Domains.Contracts.DomainsServices;
+using Domains.Contracts.Repositories;
+using Domains.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +38,9 @@ namespace DemosMVC {
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddScoped<IProductoRepository, ProductoRepository>();
+            services.AddTransient<IProductoService, ProductoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

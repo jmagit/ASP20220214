@@ -31,6 +31,10 @@ namespace Domains.Services {
             return dao.getAll();
         }
 
+        public List<Product> getAll(int page = 0, int rows = 20) {
+            return dao.getAll(page, rows);
+        }
+
         public Product getOne(int id) {
             return dao.getOne(id);
         }
