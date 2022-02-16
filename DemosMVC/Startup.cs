@@ -67,10 +67,10 @@ namespace DemosMVC {
                 //    pattern: "admin/informe/{año}/{mes}/{tipo}",
                 //    defaults: new { controller = "gererator", action = "infor" } );
 
-                //endpoints.MapControllerRoute(
-                //    name: "paginable",
-                //    pattern: "{controller=Home}/{page}/{rows}",
-                //    defaults: new { action = "Pagina" });
+                endpoints.MapControllerRoute(
+                    name: "paginable",
+                    pattern: "{controller=Home}/{pag:int}/{rows:int}",
+                    defaults: new { action = "Pagina" });
 
                 endpoints.MapControllerRoute(
                     name: "default",
