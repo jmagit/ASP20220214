@@ -30,11 +30,11 @@ namespace DemosMVC.Controllers
             return View(srv.getAll());
         }
 
-        public async Task<IActionResult> Pagina(int page, int rows = 20) {
+        public async Task<IActionResult> Pagina(int pag, int rows = 20) {
             
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
-            return View("Index", srv.getAll(page, rows));
+            return View("Index", srv.getAll(pag, rows));
         }
 
         // GET: Productos/Details/5
