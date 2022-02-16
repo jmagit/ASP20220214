@@ -17,10 +17,10 @@ namespace DemosMVC.Infraestructure {
 
 
         public List<Product> getAll() {
-            return _context.Products.ToList();
+            return _context.Products.Include(p => p.ProductProductPhotos).ToList();
         }
-        public List<Product> getAll(int page = 0, int rows = 20) {
-            return _context.Products.Where(item=>!item.DiscontinuedDate.HasValue).Skip(page * rows).Take(rows).ToList();
+        public List<Product> getPage(int page = 0, int rows = 20) {
+            return _context.Products.Include(p => p.ProductProductPhotos).Where(item=>!item.DiscontinuedDate.HasValue).Skip(page * rows).Take(rows).ToList();
 
         }
 
@@ -59,7 +59,7 @@ namespace DemosMVC.Infraestructure {
             rslt.Add(new Product() { ProductNumber = "tres", Name = "producto 3", ProductId = 3 });
             return rslt;
         }
-        public List<Product> getAll(int page = 0, int rows = 20) {
+        public List<Product> getPage(int page = 0, int rows = 20) {
             return getAll();
 
         }

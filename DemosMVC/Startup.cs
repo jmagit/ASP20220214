@@ -69,7 +69,7 @@ namespace DemosMVC {
 
                 endpoints.MapControllerRoute(
                     name: "paginable",
-                    pattern: "{controller=Home}/{pag}/{rows}",
+                    pattern: "{controller=Home}/{pag:int}/{rows:int}",
                     defaults: new { action = "Pagina" });
 
                 endpoints.MapControllerRoute(

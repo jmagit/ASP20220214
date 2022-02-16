@@ -34,7 +34,7 @@ namespace DemosMVC.Controllers
             
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
-            return View("Index", srv.getAll(pag, rows));
+            return View("Index", srv.getPage(pag, rows));
         }
 
         // GET: Productos/Details/5
@@ -196,7 +196,7 @@ namespace DemosMVC.Controllers
             if (product == null) {
                 return NotFound();
             }
-            return File(product.LargePhoto, "image/gif");
+            return File(product.ThumbNailPhoto, "image/gif");
         }
 
 
