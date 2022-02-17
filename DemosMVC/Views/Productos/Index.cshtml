@@ -34,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <img src="productos/photo/@item.ProductId" />
+                <img src="@Href("~/productos/photo/" + item.ProductId)" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |

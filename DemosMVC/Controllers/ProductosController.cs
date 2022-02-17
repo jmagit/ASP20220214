@@ -30,11 +30,11 @@ namespace DemosMVC.Controllers
             return View(srv.getAll());
         }
 
-        public async Task<IActionResult> Pagina(int page, int rows = 20) {
+        public async Task<IActionResult> Pagina(int pagina, int rows = 20) {
             
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
-            return View("Index", srv.getAll(page, rows));
+            return View("Index", srv.getAll(pagina, rows));
         }
 
         // GET: Productos/Details/5
@@ -192,7 +192,7 @@ namespace DemosMVC.Controllers
                 return NotFound();
             }
 
-            var product = await _context.ProductPhotos.FindAsync(id);
+            var product = await _context.ProductProductPhotos.Where(p=> p.ProductId==id).Select(p=>p.ProductPhoto).FirstOrDefaultAsync();
             if (product == null) {
                 return NotFound();
             }

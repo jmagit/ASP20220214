@@ -19,7 +19,7 @@ namespace DemosMVC.Infraestructure {
         public List<Product> getAll() {
             return _context.Products.ToList();
         }
-        public List<Product> getAll(int page = 0, int rows = 20) {
+        public List<Product> getAll(int page, int rows = 20) {
             return _context.Products.Where(item=>!item.DiscontinuedDate.HasValue).Skip(page * rows).Take(rows).ToList();
 
         }

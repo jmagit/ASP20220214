@@ -31,7 +31,7 @@ namespace Domains.Services {
             return dao.getAll();
         }
 
-        public List<Product> getAll(int page = 0, int rows = 20) {
+        public List<Product> getAll(int page, int rows = 20) {
             return dao.getAll(page, rows);
         }
 

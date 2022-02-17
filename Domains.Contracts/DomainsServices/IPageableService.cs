@@ -9,6 +9,6 @@ namespace Domains.Contracts.DomainsServices {
     }
 
     public interface IPageableService<E> {
-        List<E> getAll(int page = 0, int rows = 20);
+        List<E> getAll(int page, int rows = 20);
     }
 }
