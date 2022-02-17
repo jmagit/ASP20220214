@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DemosMVC.Data;
+using Infraestructure.UoW;
 using Domains.Entities;
 using System.ComponentModel.DataAnnotations;
 

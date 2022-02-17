@@ -1,8 +1,8 @@
-using DemosMVC.Data;
-using DemosMVC.Infraestructure;
 using Domains.Contracts.DomainsServices;
 using Domains.Contracts.Repositories;
 using Domains.Services;
+using Infraestructure.Repositories;
+using Infraestructure.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

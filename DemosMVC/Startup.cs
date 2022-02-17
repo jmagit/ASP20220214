@@ -1,5 +1,4 @@
-using DemosMVC.Data;
-using DemosMVC.Infraestructure;
+using Infraestructure.UoW;
 using Domains.Contracts.DomainsServices;
 using Domains.Contracts.Repositories;
 using Domains.Services;
@@ -16,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemosMVC.Data;
+using Infraestructure.Repositories;
 
 namespace DemosMVC {
     public class Startup {
