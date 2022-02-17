@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Domains.Entities.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace Domains.Entities
@@ -13,7 +14,7 @@ namespace Domains.Entities
     /// </summary>
     [Table("Currency", Schema = "Sales")]
     [Index(nameof(Name), Name = "AK_Currency_Name", IsUnique = true)]
-    public partial class Currency
+    public partial class Currency : EntityBase
     {
         public Currency()
         {
