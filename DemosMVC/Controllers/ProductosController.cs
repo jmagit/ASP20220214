@@ -23,25 +23,22 @@ namespace DemosMVC.Controllers
         }
 
         // GET: Productos
-        public async Task<IActionResult> Index()
-        {
+        public IActionResult Index() {
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
             return View(srv.getAll());
         }
 
-        public async Task<IActionResult> Pagina(int pagina, int rows = 20) {
-            
+        public IActionResult Pagina(int pagina, int rows = 20) {
+
             //var tiendaDbContext = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
             //return View(await tiendaDbContext.ToListAsync());
             return View("Index", srv.getAll(pagina, rows));
         }
 
         // GET: Productos/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
+        public IActionResult Details(int? id) {
+            if (id == null) {
                 return NotFound();
             }
 
@@ -187,7 +184,7 @@ namespace DemosMVC.Controllers
             return _context.Products.Any(e => e.ProductId == id);
         }
 
-        public async Task<IActionResult> photo(int? id) {
+        public async Task<IActionResult> Photo(int? id) {
             if (id == null) {
                 return NotFound();
             }
