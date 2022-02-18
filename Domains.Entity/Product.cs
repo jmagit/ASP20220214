@@ -213,5 +213,11 @@ namespace Domains.Entities
             // ...
             return errors;
         }
+
+        public void Descatalogar() {
+            DiscontinuedDate = DateTime.Now;
+            // ...
+        }
+
     }
 }

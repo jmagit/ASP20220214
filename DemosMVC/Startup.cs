@@ -39,8 +39,11 @@ namespace DemosMVC {
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-
+#if DEBUG
+            services.AddScoped<IProductoRepository, ProductoRepositoryMock>();
+#else
             services.AddScoped<IProductoRepository, ProductoRepository>();
+#endif
             services.AddTransient<IProductoService, ProductoService>();
         }
 
