@@ -44,6 +44,7 @@ namespace Util.Core.Validators {
         public PastAttribute() : this("La fecha debe ser anterior a ahora.") { }
         public PastAttribute(Func<string> errorMessageAccessor) : base(errorMessageAccessor) { }
         public PastAttribute(string errorMessage) : base(errorMessage) { }
+        public string DefaultErrorMessage => ErrorMessageString;
 
         public override bool IsValid(object value) {
             return value == null || value is DateTime fecha && fecha.IsPast();
@@ -54,6 +55,8 @@ namespace Util.Core.Validators {
         public NIFAttribute() : this("No es un NIF válido.") { }
         public NIFAttribute(Func<string> errorMessageAccessor) : base(errorMessageAccessor) { }
         public NIFAttribute(string errorMessage) : base(errorMessage) { }
+
+        public string DefaultErrorMessage => ErrorMessageString;
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
             if (value == null) return ValidationResult.Success;

@@ -17,6 +17,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using DemosMVC.Data;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using DemosMVC.Models.Validators;
 
 namespace DemosMVC {
     public class Startup {
@@ -45,6 +47,14 @@ namespace DemosMVC {
             services.AddScoped<IProductoRepository, ProductoRepository>();
 #endif
             services.AddTransient<IProductoService, ProductoService>();
+
+            //services.AddRazorPages()
+            //   .AddMvcOptions(options => {
+            //       options.MaxModelValidationErrors = 50;
+            //       options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+            //           _ => "The field is required.");
+            //   });
+            services.AddSingleton<IValidationAttributeAdapterProvider, CustomValidationAttributeAdapterProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

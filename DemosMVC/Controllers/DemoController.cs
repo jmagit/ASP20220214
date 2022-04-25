@@ -16,8 +16,17 @@ namespace DemosMVC.Controllers {
             return View();
         }
         public IActionResult Saluda(int? id) {
+            var item = new Persona() { Id = 1, Nombre = "Pepito", Apellidos = "Grillo", Activo = true/*, FechaDeBaja = DateTime.Now*/ };
             // modelo 
-            return View(new Persona() { Id = 1, Nombre = "Pepito", Apellidos = "Grillo", Activo = true, FechaDeBaja = DateTime.Now });
+            return View(item);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Saluda(Persona item) {
+            if (ModelState.IsValid) {
+                return RedirectToAction(nameof(Index));
+            }
+            return View(item);
         }
 
         public string cadena([FromHeader(Name ="accept-language")] string acceptLanguage) {
